@@ -1,0 +1,557 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[romanian]{babel}
+%\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+%===============================================================================
+\usepackage{ntheorem}
+  \theoremstyle{change}
+  \theorembodyfont{\upshape}
+  \newtheorem{theorem}{Teoremă}[section]
+  \newtheorem{definition}[theorem]{Definiție}
+  \newtheorem{example}[theorem]{Exemplu}
+  \newtheorem{proposition}[theorem]{Propoziție}
+  \newtheorem{corollary}[theorem]{Corolar}
+  \newenvironment{proof}{{\bf Demonstrație:} }{}
+  %\newtheorem{exercise}[theorem]{Exercițiu}
+  \newtheorem{question}[theorem]{\^{I}ntrebare}
+  \newtheorem{problem}[theorem]{Problemă}
+  \newtheorem{algorithm}[theorem]{Algoritm}
+%===============================================================================
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{caption}
+\usepackage{subcaption}
+%===============================================================================
+\usepackage{titlesec}
+  \titleformat{\chapter}
+    {\normalfont\huge\bfseries}{}{20pt}{\Huge}
+  \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+  \titleclass{\section}{straight}
+\usepackage{xargs}
+\usepackage{minibox}% http://tex.stackexchange.com/questions/8680/how-can-i-insert-a-newline-in-a-framebox
+  \renewcommandx\minibox[3][1=l, 2=c]{%
+    \begin{tabular}[#2]{@{}#1@{}}
+      #3
+    \end{tabular}%
+  }
+%===============================================================================
+
+%===============================================================================
+\usepackage{exercise}
+  \renewcommand{\ExerciseName}{}
+  \renewcommand{\ExerciseListName}{}
+  \renewcommand{\ExerciseHeaderTitle}{\ExerciseTitle}
+  \renewcommand{\ExerciseHeader}{\textbf{
+                \ExerciseName\ExerciseHeaderNB.\ExerciseHeaderTitle
+                \ExerciseHeaderOrigin}}
+  \renewcommand{\ExerciseHeader}{\textbf{
+                \ExerciseName\ExerciseHeaderNB.\ExerciseHeaderTitle}}
+  \renewcommand{\ExerciseListHeader}{\ExerciseHeaderDifficulty%
+              \textbf{\ExerciseListName\ \ExerciseHeaderNB.%
+              \ \ExerciseHeaderTitle}%
+              \ExerciseHeaderOrigin\ignorespaces}
+  \renewcommand{\ExerciseListHeader}{\ExerciseHeaderDifficulty%
+              \textbf{\ExerciseListName\ \ExerciseHeaderNB.%
+              \ \ExerciseHeaderTitle}%
+              \ignorespaces}
+  \setlength{\ExerciseSkipBefore}{0\baselineskip}
+  \setlength{\ExerciseSkipAfter}{0\baselineskip}
+  \setlength{\Exesep}{0\baselineskip}
+  \setlength{\Exetopsep}{0\baselineskip}
+  \setlength{\Exeleftmargin}{25em}
+  \setlength{\QuestionBefore}{0\baselineskip}
+%===============================================================================
+
+\newcommand{\N}[1]{\mathbb{#1}}
+
+
+
+
+\title{Elemente de analiză funcțională\\Note de curs}
+\author{Radu N. Dumbraveanu}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%===============================================================================
+\section{Săptămâna 7}
+%===============================================================================
+
+%-------------------------------------------------------------------------------
+\subsection{Introducere}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Ce studiază analiza funcțională}
+%-------------------------------------------------------------------------------
+
+% Preliminarii:
+% Mulţimi numărabile, nenumărabile, echivalente. Teorema Cantor-Bernstein.
+
+Inifinitul în matematica modernă.
+
+Zenon și broasca.
+
+% http://www.math.vanderbilt.edu/~schectex/courses/infinity.pdf
+
+% http://books.google.md/books?id=0AzP9WLLJLcC&pg=PA21&lpg=PA21&dq=zeno+paradoxes+cantor+theory&source=bl&ots=d9atCtdOJd&sig=FzJTO81ruEW-OLFp5bvvc38l1tI&hl=ro&sa=X&ei=3QsvVJP1AcKnygPW9IIQ&ved=0CEcQ6AEwBQ#v=onepage&q=zeno%20paradoxes%20cantor%20theory&f=false
+
+%-------------------------------------------------------------------------------
+\subsection{Mulțimi echivalente}
+%-------------------------------------------------------------------------------
+
+\begin{definition}
+Două mulțimi $A$ si $B$ se numesc \emph{echivalente} dacă elementele acestora pot 
+fi posi într-o corespondență bijectivă.
+\end{definition}
+
+% http://mathforum.org/isaac/problems/cantor2.html
+
+Ce înseamnă echivalență? O permutare a mulțimii. O redenumire.
+
+Proprietățile operațiilor cu mulțimi numărabile.
+
+$\mathbb{N}^\mathbb{N}=\mathbb{I}$
+ 
+
+\url{http://people.wku.edu/david.neal/337/Cardinality.pdf}
+
+%-------------------------------------------------------------------------------
+\subsection{Mulțimi numărabile}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Mulțimi nenumărabile}
+%-------------------------------------------------------------------------------
+
+% Cantor diagonal argument 10, http://mathcircle.berkeley.edu/BMC5/docpspdf/infinity.pdf
+
+% Teorema cantor http://www.whitman.edu/mathematics/higher_math_online/section04.10.html
+
+%-------------------------------------------------------------------------------
+\subsection{Teorema Cantor-Bernstein}
+%-------------------------------------------------------------------------------
+
+% Spaţii metrice. Exemple. Inegalităţile Young, Holder, Minkowski.
+
+%-------------------------------------------------------------------------------
+\subsection{Spații metrice}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Inegalităţile Young, Holder, Minkowski}
+%-------------------------------------------------------------------------------
+
+% Mulţimi închise şi mulţimi deschise. Spaţii metrice separabile.
+
+%-------------------------------------------------------------------------------
+\subsection{Topologie}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Mulțimi deschise}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Mulțimi închise}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Spații metrice separabile}
+%-------------------------------------------------------------------------------
+
+%===============================================================================
+\section{Săptămâna 8}
+%===============================================================================
+
+% Convergenţa într-un spaţiu metric. Şiruri fundamentale.
+
+%-------------------------------------------------------------------------------
+\subsection{Convergența în metrică}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Șiruri fundamentale}
+%-------------------------------------------------------------------------------
+
+% Spaţii metrice complete. Exemple.
+
+%-------------------------------------------------------------------------------
+\subsection{Spații metrice complete}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Exemple}
+%-------------------------------------------------------------------------------
+
+\paragraph{Spațiile $\mathbb{R}^n$ și $\mathbb{C}^n$} Spațiul euclidian $\mathbb{R}^n$ și spațiul unitar $\mathbb{C}^n$ sînt complete.
+
+\begin{proof}
+Cazul I: $\mathbb{R}^n$.
+
+Reamintim că metrica euclidiană este definită prin: 
+\[
+  d(x,y) = \sqrt{\Sigma_{i=1}^n (\xi_i - \eta_i)^2}
+\]
+unde $x=(\xi_i)$ și $y=(\eta_i)$. Fie $(x_m)$ un șir Cauchy în $\mathbb{R}^n$, cu fiecare termen definit astfel $x_m=(\xi_1^{(m)},\xi_2^{(m)},...,\xi_n^{(m)})$. Întrucît $(x_m)$ este Cauchy, pentru orice $\varepsilon$ pozitiv, există un rang $n_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ și $x_p$ de rang mai mare decît $n_{\varepsilon}$ ($m,p>n_{\varepsilon}$) să avem:
+
+\[
+\label{l1}
+d(x_m,x_p) = \sqrt{\Sigma_{i=1}^n (\xi_i^{(m)}-\eta_i^{(p)})^2} < \varepsilon.
+\]
+
+Ridicăm la pătrat
+
+\[
+\Sigma_{i=1}^n (\xi_i^{(m)}-\eta_i^{(p)})^2 < \varepsilon^2.
+\]
+
+și deoarece termenii sumei sînt nenegativi reiese că pentru orice $m,p>n_\varepsilon$ și $i=\overline{1,n}$ avem
+
+\[
+(\xi_i^{(m)}-\eta_i^{(p)})^2 < \varepsilon^2 \text{ și } |\xi_i^{(m)}-\eta_i^{(p)}| < \varepsilon.
+\]
+
+Din ultima relație reies că pentru fiecare $i=\overline{1,n}$ șirul de coordonate (care-s numere reale) $\xi_i^{(1)}, \xi_i^{(2)}, ..., \xi_i^{(m)}, ...$ este un șir Cauchy de numere reale. Acest șir converge conform criteriului Cauchy de convergență a șirurilor numerice: $\xi_i^{(m)}\to \xi_i$ cînd $m\to\infty$. Folosind aceste $n$ limite definim $x=(\xi_1,\xi_2,...,\xi_n)$. Evident, $x\in\mathbb{R}^n$. Din $\ref{l1}$ cu $p\to\infty$ pentru $m>n_\varepsilon$ avem
+
+\[
+d(x_m,x)\leq\varepsilon.
+\]
+
+Așadar $x$ este limita șirului $(x_m)$ și întrucît acest șir Cauchy este arbitrar spațiul $\mathbb{R}^n$ este complet.
+
+Cazul II: $\mathbb{C}^n$.
+
+Se demonstrează analog.
+
+\end{proof}
+
+\paragraph{Spațiul $l^\infty$} Spațiul $l^\infty$ este complet.
+
+\begin{proof}
+
+Fie $(x_m)$ un șir Cauchy în $l^\infty$, unde $x_m=(\xi_1^{(m)},\xi_2^{(m)},...)$. Întrucîț metrica pe $l^\infty$ este definită prin
+
+\[
+  d(x,y) = \sup_{i=1}^{\infty} |\xi_i - \eta_i|
+\]
+
+unde $x=(\xi_i)$ și $y=(\eta_i)$.  și $(x_m)$ este Cauchy, pentru orice $\varepsilon$ pozitiv, există un rang $n_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ și $x_p$ de rang mai mare decît $n_{\varepsilon}$ ($m,p>n_{\varepsilon}$) să avem:
+
+\[
+d(x_m,x_p) = \sup_{i=1}^{\infty} |\xi_i^{(m)} - \xi_i^{(p)}| < \varepsilon.
+\]
+
+și deoarece supremumul este luat de la elemente nenegative reiese că pentru orice $m,p>n_\varepsilon$ și $i=\overline{1,n}$ avem
+
+\[
+\label{l2}
+|\xi_i^{(m)} - \xi_i^{(p)}| < \varepsilon.
+\]
+
+Din ultima relație reies că pentru fiecare $i=\overline{1,n}$ șirul de coordonate (care-s numere reale) $\xi_i^{(1)}, \xi_i^{(2)}, ..., \xi_i^{(m)}, ...$ este un șir Cauchy de numere reale. Acest șir converge conform criteriului Cauchy de convergență a șirurilor numerice: $\xi_i^{(m)}\to \xi_i$ cînd $m\to\infty$. Folosind aceste limite infinite definim $x=(\xi_1,\xi_2,...)$. Evident, $x\in\mathbb{R}^n$. Vom arăta că $x\in l^\infty$ și $x_m\to x$.
+
+Din \ref{l2} cînd $p\to\infty$ avem
+
+\[
+\label{l2star}
+|\xi_i^{(m)} - \xi_i| \leq \varepsilon.
+\]
+
+Deoarece $x_m=(\xi_i^{(m)})\in l^\infty$ el este mărginit, i.e. există un număr real $k_m$ încît pentru orice $i$ avem $|\xi_i^{(m)}|\leq k_m$. Din inegalitatea triunghiului pentru orice $m>n_\varepsilon$:
+
+\[
+|\xi_i|=|\xi_i-\xi_i^{(m)}+\xi_i^{(m)}|\leq |\xi_i-\xi_i^{(m)}|+|\xi_i^{(m)}|\leq\varepsilon+k_m
+\]
+
+Inegalitatea de mai sus este adevărată pentru orice $i$ și din cauza că în membrul drept $i$ nu este prezent rezutlă că șirul $(\xi_i)$ este marginit, i.e. $x\in l^\infty$. De asemenea din \ref{l2star} pentru $m>n_\varepsilon$
+
+\[
+d(x_m,x)=\sup_i |\xi_i^{(m)}-\xi_i|\leq \varepsilon.
+\]
+
+Rezulta că $x_m\to x$. Așadar $l^\infty$ este complet.
+
+\end{proof}
+
+
+% Completarea spaţiilor metrice. Teorema Hausdorff.
+
+%-------------------------------------------------------------------------------
+\subsection{Completarea spațiilor metrice}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Teorema Hausdorff}
+%-------------------------------------------------------------------------------
+
+% Teorema lui Cantor. Mulţimi rare. Teorema Baire.
+
+%-------------------------------------------------------------------------------
+\subsection{Teorema lui Cantor}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Mulțimi rare}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Teorema Baire}
+%-------------------------------------------------------------------------------
+
+% Aplicaţii de contracţie. Principiul punctului fix. Aplicații generalizate de  contracţie. Aplicaţii generalizate de  contracţie. Aplicaţii ale principiului  punctului fix.
+
+%-------------------------------------------------------------------------------
+\subsection{Contracții}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Principiul punctului fix}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Aplicaţii ale principiului  punctului fix}
+%-------------------------------------------------------------------------------
+
+%===============================================================================
+\section{Săptămâna 9}
+%===============================================================================
+
+% Mulţimi compacte. Teorema Hausdorf  şi consecinţele ei.
+
+%-------------------------------------------------------------------------------
+\subsection{Mulţimi compacte}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Teorema Hausdorf}
+%-------------------------------------------------------------------------------
+
+% Criterii de cmpacitate în C  a,b  Acoperiri. Teorema Borel. Funcţii continui    pe mulţimi compacte.
+
+%-------------------------------------------------------------------------------
+\subsection{Criterii de cmpacitate în $C[a,b]$}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Teorema Borel}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Funcții continui pe mulțimi compacte}
+%-------------------------------------------------------------------------------
+
+% Spaţii liniare normate. Subspaţii. Sume directe şi subspaţii.
+
+%-------------------------------------------------------------------------------
+\subsection{Norma}
+%-------------------------------------------------------------------------------
+
+% Spaţii Banah. Spaţii cât.
+
+%-------------------------------------------------------------------------------
+\subsection{Spații Banach}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Spații cît}
+%-------------------------------------------------------------------------------
+
+%===============================================================================
+\section{Săptămâna 10}
+%===============================================================================
+
+% Izomorfizmul spaţiilor normate finit dimensionale. Spaţiile L    şi L
+
+%-------------------------------------------------------------------------------
+\subsection{Izomorfizmul spaţiilor normate finit dimensionale}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Spaţiile $L$ și $L$}
+%-------------------------------------------------------------------------------
+
+% Spaţii  Hilbert. Spaţii prehilbertiene.
+
+%-------------------------------------------------------------------------------
+\subsection{Spaţii  Hilbert}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Spaţii prehilbertiene}
+%-------------------------------------------------------------------------------
+
+% Operatori liniari şi mărginiţi. Exemple.
+
+%-------------------------------------------------------------------------------
+\subsection{Operatori liniari}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Operatori mărginiţi}
+%-------------------------------------------------------------------------------
+
+% Norma operatorului  liniar. Exemple.
+
+%-------------------------------------------------------------------------------
+\subsection{Norma operatorului liniar}
+%-------------------------------------------------------------------------------
+
+%===============================================================================
+\section{Săptămâna 11}
+%===============================================================================
+
+% Spaţiul operatoriloi liniari. Principiul mărginirii uniforme.
+
+%-------------------------------------------------------------------------------
+\subsection{Spațiul operatorilor liniari}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Principiul mărginirii uniforme}
+%-------------------------------------------------------------------------------
+
+% Convergenţa tare a şirului de operatori. Prelungirea operatorilor liniari.
+
+%-------------------------------------------------------------------------------
+\subsection{Convergenţa tare a şirului de operatori}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Prelungirea operatorilor liniari}
+%-------------------------------------------------------------------------------
+
+% Funcţionale liniare. Exemple.
+
+%-------------------------------------------------------------------------------
+\subsection{Funcționale liniare}
+%-------------------------------------------------------------------------------
+
+% Prelungirea funcţionalelor liniare. Teorema Hahn-Banach.
+
+%-------------------------------------------------------------------------------
+\subsection{Prelungirea funcționalelor liniare}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Teorema Hahn-Banach}
+%-------------------------------------------------------------------------------
+
+%===============================================================================
+\section{Săptămâna 12}
+%===============================================================================
+
+% Forma generală a funcţionalelor liniare şi mărginite în unele spaţii finitdimensionale.
+
+%-------------------------------------------------------------------------------
+\subsection{Forma generală a funcţionalelor liniare}
+%-------------------------------------------------------------------------------
+
+% Forma generală a funcţionalelor în spaţiile Ca,b şi  Lp  a,b
+
+%-------------------------------------------------------------------------------
+\subsection{Forma generală a funcţionalelor în spaţiile }
+%-------------------------------------------------------------------------------
+
+% Convergenţa slabă. Teorema Polya-Steclov.
+
+%-------------------------------------------------------------------------------
+\subsection{Convergenţa slabă}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Teorema Polya-Steclov}
+%-------------------------------------------------------------------------------
+
+% Măsura mărimilor elementare. Măsura Lebesgue a mulţimilor plane.
+
+%-------------------------------------------------------------------------------
+\subsection{Măsura mărimilor elementare}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Măsura Lebesgue a mulțimilor plane}
+%-------------------------------------------------------------------------------
+
+%===============================================================================
+\section{Săptămâna 13}
+%===============================================================================
+
+% Noţiuni generale despre măsură. Prelungirea măsurii de pe un inel. - aditivitatea măsurii. Prelungirea Lebesque  a măsurii.
+
+%-------------------------------------------------------------------------------
+\subsection{Măsura}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Prelungirea Lebesque a măsurii}
+%-------------------------------------------------------------------------------
+
+% Funcţiile măsurabile. Teorema Egorov şi teorema Luzin. 
+
+%-------------------------------------------------------------------------------
+\subsection{Funcțiile măsurabile}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Teorema Egorov şi teorema Luzin}
+%-------------------------------------------------------------------------------
+
+% Funcţii simple . Integrala Lebesque
+
+%-------------------------------------------------------------------------------
+\subsection{Funcții simple}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\subsection{Integrala Lebesgue}
+%-------------------------------------------------------------------------------
+
+% -aditivitate şi trecerea la limită sub semnul integralei Lebesque.
+
+%-------------------------------------------------------------------------------
+\subsection{Trecerea la limită sub semnul integralei Lebesgue}
+%-------------------------------------------------------------------------------
+
+%===============================================================================
+\section{Săptămâna 14}
+%===============================================================================
+
+% Legătura între integrala Lebesque şi integrala Riemann. Funcţii cu variaţie mărginită.
+
+%-------------------------------------------------------------------------------
+\subsection{Legătura între integrala Lebesgue şi integrala Riemann}
+%-------------------------------------------------------------------------------
+
+% Produsul sistemului de mulţimi, produsul măsurilor.
+
+%-------------------------------------------------------------------------------
+\subsection{Produsul măsurilor}
+%-------------------------------------------------------------------------------
+
+% Măsura Stiltes. Integrala Lebesque-Stiltes. Integrala Riemann-Stiltes.
+
+%-------------------------------------------------------------------------------
+\subsection{Măsura Stiltjes}
+%-------------------------------------------------------------------------------
+
+% Trecerea la limită sub semnul integralei Stiltes.
+
+%-------------------------------------------------------------------------------
+\subsection{Trecerea la limită sub semnul integralei Stiltjes}
+%-------------------------------------------------------------------------------
+
+%===============================================================================
+\section{Săptămâna 15}
+%===============================================================================
+
+\end{document}
