@@ -283,6 +283,42 @@ Rezulta că $x_m\to x$. Așadar $l^\infty$ este complet.
 
 \end{proof}
 
+\paragraph{Spațiul $c$} Spațiul $c$ este complet. 
+
+\begin{proof}
+Reamintim că $c$ este spațiul șirurilor convergente de numere reale sau complexe.
+Metrica acestuia este cea indusă din $l^\infty$ deoarece $c$ este subspațiu al lui $l^\infty$.
+Vom utiliza Teorema ??? , i.e. vom arăta că $c$ este un subspațiu închis în $l^\infty$.
+
+Fie $x=(\xi_i)\in cl c$. Atunci există $x_m=(\xi_i^{(m)})\in c$ astfel încît $x_m\to x$ cînd $m\to\infty$. Atunci pentru orice $\varepsilon$ pozitiv, există un rang $n_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ de rang mai mare decît $n_{\varepsilon}$ ($m>n_{\varepsilon}$) să avem:
+
+\[
+  d(x_m,x) = \sup_{i=1}^{\infty} |\xi_i^{(m)} - \eta_i| < \varepsilon
+\]
+
+și deoarece supremumul este luat de la elemente nenegative reiese că pentru orice $m>n_\varepsilon$ și $i=\overline{1,n}$ avem
+
+\[
+|\xi_i^{(m)} - \xi_i| < \varepsilon.
+\]
+
+În același timp $\xi_i^{(m)}$ sînt coordonatele elementelor din $c$, adică elemente de șiruri convergente. Deci este și Cauchy. Deci pentru orice $\varepsilon_1$ pozitiv, există un rang $n_{\varepsilon_1}$ astfel încît pentru toți termenii $\xi_i^{(m)}$ și $\xi_j^{(m)}$ de rang mai mare decît $n_{\varepsilon_1}$ ($i,j>n_{\varepsilon_1}$) să avem:
+
+\[
+|\xi_i^{(m)}-\xi_j^{(m)}|<\varepsilon_1
+\]
+
+Aplicăm inegalitatea triunghiului pentru orice $i,j>\varepsilon_1$:
+
+\[
+|\xi_i-\xi_j|<|\xi_i^{(m)}|+|\xi_i^{(m)}-\xi_j^{(m)}|+|\xi_j^{(m)}-\xi_j|<\varepsilon.
+\]
+
+Rezultă că $(\xi_i)$ este șir convergent, i.e. $x=(x_i)\in c$. Așadar $x\in cl c$.
+\end{proof}
+
+
+
 
 % Completarea spaţiilor metrice. Teorema Hausdorff.
 
