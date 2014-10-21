@@ -317,7 +317,59 @@ Aplicăm inegalitatea triunghiului pentru orice $i,j>\varepsilon_1$:
 Rezultă că $(\xi_i)$ este șir convergent, i.e. $x=(x_i)\in c$. Așadar $x\in cl c$.
 \end{proof}
 
+\paragraph{Spațiul $l^p$} Spatiul $l^p$ este complet, $1\leq p<\infty$.
 
+\begin{proof}
+Fie $(x_m)$ un șir Cauchy în $l^p$, unde $x_m=(\xi_1^{(m)},\xi_2^{(m)},...)$. Întrucîț metrica pe $l^p$ este definită prin
+
+\[
+  d(x,y) = (\Sigma_{i=1}^\infty |\xi_i - \eta_i|^p)^{\frac{1}{p}}
+\]
+
+unde $x=(\xi_i)$ și $y=(\eta_i)$.  și $(x_m)$ este Cauchy, pentru orice $\varepsilon$ pozitiv, există un rang $n_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ și $x_p$ de rang mai mare decît $n_{\varepsilon}$ ($m,p>n_{\varepsilon}$) să avem:
+
+\[
+\label{l3}
+d(x_m,x_k) = (\Sigma_{i=1}^\infty |\xi_i^{(m)} - \xi_i^{(k)}|^p)^{\frac{1}{p}} < \varepsilon.
+\]
+
+și deoarece este luat de la elemente nenegative reiese că pentru orice $m,k>n_\varepsilon$ și $i=\overline{1,n}$ avem
+
+\[
+\label{l4}
+|\xi_i^{(m)} - \xi_i^{(k)}| < \varepsilon.
+\]
+
+Dacă fixăm $i$ din \ref{l4} reiese că $\xi_i^{(1)},\xi_i^{(2)},...$ este Cauchy. Și respectiv este convergent deoarece $\mathbb{R}$ și $\mathbb{C}$ sînt spații complete. Fie $\xi_i^{(m)}\to \xi_i$ cînd $m\to\infty$. Folosind aceste limite definim $x=(\xi_1, \xi_2,...)$. Vom arăta că $x\in l^p$ și că $x_m\to x$.
+
+Din \ref{l3} (ridicînd la puterea $p$) avem pentru orice $m.k>n_\varepsilon$:
+
+\[
+\Sigma_{i=1}^r |\xi_i^{(m)} - \xi_i^{(k)}|^p < \varepsilon^p.
+\]
+
+Punînd $k\to\infty$ pentru $m>n_\varepsilon$ avem
+
+\[
+\Sigma_{i=1}^r |\xi_i^{(m)} - \xi_i|^p \leq \varepsilon^p.
+\]
+
+Acum punînd $r\to\infty$:
+
+\[
+\label{l5}
+\Sigma_{i=1}^\infty |\xi_i^{(m)} - \xi_i|^p \leq \varepsilon^p.
+\]
+
+Ultima inegalitate arată că: $x_m-x=(\xi_i^{(m)}-\xi_i)\in l^p$. Întrucîț $x_m\in l^p$ din inegalitatea lui Minkowski reiese:
+
+\[
+x=x_m+(x-x_m)\in l^p.
+\]
+
+Mai mult, seria din \ref{l5} reprezintă $[d(x_m,x)]^p$ și deci \ref{l5} implică $x_m\to x$.
+
+\end{proof}
 
 
 % Completarea spaţiilor metrice. Teorema Hausdorff.
