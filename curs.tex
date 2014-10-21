@@ -15,8 +15,10 @@
   \newtheorem{example}[theorem]{Exemplu}
   \newtheorem{proposition}[theorem]{Propoziție}
   \newtheorem{corollary}[theorem]{Corolar}
-  \newenvironment{proof}{{\bf Demonstrație:} }{}
+%  \newenvironment{proof}{{\bf Demonstrație:} }{}
   %\newtheorem{exercise}[theorem]{Exercițiu}
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}  
   \newtheorem{question}[theorem]{\^{I}ntrebare}
   \newtheorem{problem}[theorem]{Problemă}
   \newtheorem{algorithm}[theorem]{Algoritm}
@@ -87,58 +89,7 @@
 %===============================================================================
 
 %-------------------------------------------------------------------------------
-\subsection{Introducere}
-%-------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------
-\subsection{Ce studiază analiza funcțională}
-%-------------------------------------------------------------------------------
-
-% Preliminarii:
-% Mulţimi numărabile, nenumărabile, echivalente. Teorema Cantor-Bernstein.
-
-Inifinitul în matematica modernă.
-
-Zenon și broasca.
-
-% http://www.math.vanderbilt.edu/~schectex/courses/infinity.pdf
-
-% http://books.google.md/books?id=0AzP9WLLJLcC&pg=PA21&lpg=PA21&dq=zeno+paradoxes+cantor+theory&source=bl&ots=d9atCtdOJd&sig=FzJTO81ruEW-OLFp5bvvc38l1tI&hl=ro&sa=X&ei=3QsvVJP1AcKnygPW9IIQ&ved=0CEcQ6AEwBQ#v=onepage&q=zeno%20paradoxes%20cantor%20theory&f=false
-
-%-------------------------------------------------------------------------------
-\subsection{Mulțimi echivalente}
-%-------------------------------------------------------------------------------
-
-\begin{definition}
-Două mulțimi $A$ si $B$ se numesc \emph{echivalente} dacă elementele acestora pot 
-fi posi într-o corespondență bijectivă.
-\end{definition}
-
-% http://mathforum.org/isaac/problems/cantor2.html
-
-Ce înseamnă echivalență? O permutare a mulțimii. O redenumire.
-
-Proprietățile operațiilor cu mulțimi numărabile.
-
-$\mathbb{N}^\mathbb{N}=\mathbb{I}$
- 
-
-\url{http://people.wku.edu/david.neal/337/Cardinality.pdf}
-
-%-------------------------------------------------------------------------------
-\subsection{Mulțimi numărabile}
-%-------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------
-\subsection{Mulțimi nenumărabile}
-%-------------------------------------------------------------------------------
-
-% Cantor diagonal argument 10, http://mathcircle.berkeley.edu/BMC5/docpspdf/infinity.pdf
-
-% Teorema cantor http://www.whitman.edu/mathematics/higher_math_online/section04.10.html
-
-%-------------------------------------------------------------------------------
-\subsection{Teorema Cantor-Bernstein}
+\subsection{Obiectul analizei funcționale}
 %-------------------------------------------------------------------------------
 
 % Spaţii metrice. Exemple. Inegalităţile Young, Holder, Minkowski.
@@ -148,14 +99,10 @@ $\mathbb{N}^\mathbb{N}=\mathbb{I}$
 %-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
-\subsection{Inegalităţile Young, Holder, Minkowski}
+\subsection{Inegalităţile Young, H\"older, Minkowski}
 %-------------------------------------------------------------------------------
 
 % Mulţimi închise şi mulţimi deschise. Spaţii metrice separabile.
-
-%-------------------------------------------------------------------------------
-\subsection{Topologie}
-%-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
 \subsection{Mulțimi deschise}
@@ -186,58 +133,54 @@ $\mathbb{N}^\mathbb{N}=\mathbb{I}$
 % Spaţii metrice complete. Exemple.
 
 %-------------------------------------------------------------------------------
-\subsection{Spații metrice complete}
+\subsection{Spații complete}
 %-------------------------------------------------------------------------------
 
+\begin{theorem}\label{thm:subspatiu-complet}
+Fie $X$ un spațiu metric complet și $Y$ un subspațiu al lui $X$. Atunci $Y$ este complet dacă și numai dacă $Y$ este închis în $X$.
+\end{theorem}
+
 %-------------------------------------------------------------------------------
-\subsection{Exemple}
+\subsection{Spații complete remarcabile}
 %-------------------------------------------------------------------------------
 
-\paragraph{Spațiile $\mathbb{R}^n$ și $\mathbb{C}^n$} Spațiul euclidian $\mathbb{R}^n$ și spațiul unitar $\mathbb{C}^n$ sînt complete.
+\paragraph{Spațiile $\mathbb{R}^n$ și $\mathbb{C}^n$} Spațiul euclidian $\mathbb{R}^n$ și spațiul unitar $\mathbb{C}^n$ sunt complete.
 
-\begin{proof}
-Cazul I: $\mathbb{R}^n$.
+\begin{proof}[Într-adevăr]
+Vom considera mai întâi spațiul $\mathbb{R}^n$.
+Și reamintim că metrica pe $\mathbb{R}^n$ (metrica euclidiană) este definită prin 
 
-Reamintim că metrica euclidiană este definită prin: 
-\[
-  d(x,y) = \sqrt{\Sigma_{i=1}^n (\xi_i - \eta_i)^2}
-\]
-unde $x=(\xi_i)$ și $y=(\eta_i)$. Fie $(x_m)$ un șir Cauchy în $\mathbb{R}^n$, cu fiecare termen definit astfel $x_m=(\xi_1^{(m)},\xi_2^{(m)},...,\xi_n^{(m)})$. Întrucît $(x_m)$ este Cauchy, pentru orice $\varepsilon$ pozitiv, există un rang $n_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ și $x_p$ de rang mai mare decît $n_{\varepsilon}$ ($m,p>n_{\varepsilon}$) să avem:
+\[ d(x,y) = \left(\sum_{i=1}^n (\xi_i - \eta_i)^2\right)^\frac{1}{2} \]
 
-\[
-\label{l1}
-d(x_m,x_p) = \sqrt{\Sigma_{i=1}^n (\xi_i^{(m)}-\eta_i^{(p)})^2} < \varepsilon.
-\]
+\noindent unde $x=(\xi_i)$ și $y=(\eta_i)$. 
 
-Ridicăm la pătrat
+Fie $(x_m)$ un șir Cauchy în $\mathbb{R}^n$, cu $x_m=(\xi_1^{(m)},\xi_2^{(m)},...,\xi_n^{(m)})$. Atunci pentru orice $\varepsilon$ pozitiv, există un rang $m_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ și $x_p$ de rang mai mare decît $m_{\varepsilon}$ ($m,p>m_{\varepsilon}$) să avem
 
-\[
-\Sigma_{i=1}^n (\xi_i^{(m)}-\eta_i^{(p)})^2 < \varepsilon^2.
-\]
+\begin{equation}\label{l1}
+d(x_m,x_p) = \left(\sum_{i=1}^n (\xi_i^{(m)}-\eta_i^{(p)})^2\right)^\frac{1}{2} < \varepsilon.
+\end{equation}
 
-și deoarece termenii sumei sînt nenegativi reiese că pentru orice $m,p>n_\varepsilon$ și $i=\overline{1,n}$ avem
+Ridicînd la pătrat ambele părți ale inegalității obținem
 
-\[
-(\xi_i^{(m)}-\eta_i^{(p)})^2 < \varepsilon^2 \text{ și } |\xi_i^{(m)}-\eta_i^{(p)}| < \varepsilon.
-\]
+\[ \sum_{i=1}^n (\xi_i^{(m)}-\eta_i^{(p)})^2 < \varepsilon^2. \]
 
-Din ultima relație reies că pentru fiecare $i=\overline{1,n}$ șirul de coordonate (care-s numere reale) $\xi_i^{(1)}, \xi_i^{(2)}, ..., \xi_i^{(m)}, ...$ este un șir Cauchy de numere reale. Acest șir converge conform criteriului Cauchy de convergență a șirurilor numerice: $\xi_i^{(m)}\to \xi_i$ cînd $m\to\infty$. Folosind aceste $n$ limite definim $x=(\xi_1,\xi_2,...,\xi_n)$. Evident, $x\in\mathbb{R}^n$. Din $\ref{l1}$ cu $p\to\infty$ pentru $m>n_\varepsilon$ avem
+Întrucît termenii sumei sînt nenegativi reiese că pentru orice $m,p>m_\varepsilon$ și $i=\overline{1,n}$ avem
 
-\[
-d(x_m,x)\leq\varepsilon.
-\]
+\[ (\xi_i^{(m)}-\eta_i^{(p)})^2 < \varepsilon^2 \text{ și respectiv } |\xi_i^{(m)}-\eta_i^{(p)}| < \varepsilon. \]
 
-Așadar $x$ este limita șirului $(x_m)$ și întrucît acest șir Cauchy este arbitrar spațiul $\mathbb{R}^n$ este complet.
+Din ultima relație rezultă că pentru fiecare $i=\overline{1,n}$,  șirul de numere reale $\xi_i^{(1)}, \xi_i^{(2)}, ..., \xi_i^{(m)}, ...$ este un șir Cauchy. Acest șir este convergent, conform criteriului Cauchy de convergență a șirurilor numerice: $\xi_i^{(m)}\to \xi_i$ cînd $m\to\infty$. Folosind aceste $n$ limite definim $x=(\xi_1,\xi_2,...,\xi_n)$. Evident, $x\in\mathbb{R}^n$. Trecînd la limită în \eqref{l1} cu $p\to\infty$ pentru $m>m_\varepsilon$ avem
 
-Cazul II: $\mathbb{C}^n$.
+\[ d(x_m,x)\leq\varepsilon. \]
 
-Se demonstrează analog.
+Așadar $x$ este limita șirului $(x_m)$ și întrucît acest șir a fost ales arbitrar spațiul $\mathbb{R}^n$ este complet.
+
+Completitudinea spațiului $\mathbb{C}^n$ se demonstrează analog.
 
 \end{proof}
 
 \paragraph{Spațiul $l^\infty$} Spațiul $l^\infty$ este complet.
 
-\begin{proof}
+\begin{proof}[Într-adevăr]
 
 Fie $(x_m)$ un șir Cauchy în $l^\infty$, unde $x_m=(\xi_1^{(m)},\xi_2^{(m)},...)$. Întrucîț metrica pe $l^\infty$ este definită prin
 
