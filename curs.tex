@@ -341,22 +341,22 @@ Fie $(x_m)$ un șir Cauchy în $C[a,b]$, unde $x_m=x_m(t)$, $t\in [a,b]$. Întru
   d(x,y) = max_{t\in [a,b]} |x(t)-y(t)|
 \]
 
-unde $x=x(t)$ și $y=y(t)$.  și $(x_m)$ este Cauchy, pentru orice $\varepsilon$ pozitiv, există un rang $m_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ și $x_p$ de rang mai mare decît $m_{\varepsilon}$ ($m,p>m_{\varepsilon}$) să avem:
+\noindent unde $x=x(t)$ și $y=y(t)$ și $(x_m)$ este Cauchy, pentru orice $\varepsilon$ pozitiv, există un rang $m_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ și $x_n$ de rang mai mare decît $m_{\varepsilon}$ ($m,n>m_{\varepsilon}$) să avem:
 
 \[
 \label{l6}
-d(x_m,x_p) = max_{t\in [a,b]} |x_m(t)-x_p(t)|<\varepsilon
+d(x_m,x_n) = max_{t\in [a,b]} |x_m(t)-x_n(t)|<\varepsilon
 \]
 
-Pentru orice $t_0\in [a,b]$
+Atunci pentru orice $t_0\in [a,b]$:
 
 \[
-|x_m(t_0)-x_p(t_0)|<\varepsilon.
+|x_m(t_0)-x_n(t_0)|<\varepsilon.
 \]
 
-Reiese că $x_1(t_0),x_2(t_0),...$ este un șit numeric Cauchy. Întrucît $\mathbb{R}$ este complet acest șir converge. Fie $x_m(t_0)\to x(t_0)$ cînd $m\to\infty$. În așa fel pentru orice $t\in[a,b]$ putem asocia un număr $x(t)$. Definește punctual o funcție $x$ pe $[a,b]$. Vom arata că $x\in C[a,b]$ și $x_m\to x$.
+Reiese că $x_1(t_0),x_2(t_0),...$ este un șir numeric Cauchy. Întrucît $\mathbb{R}$ este complet acest șir converge. Fie $x_m(t_0)\to x(t_0)$ cînd $m\to\infty$. În așa fel pentru orice $t\in[a,b]$ putem asocia un număr $x(t)$. Astfel am definit punctual o funcție $x$ pe $[a,b]$. Vom arata că $x\in C[a,b]$ și $x_m\to x$.
 
-Din \ref{l6} cu $p\to\infty$
+Trecînd la limită în \eqref{l6} cu $n\to\infty$ obținem
 
 \[
 max_{t\in [a,b]} |x_m(t)-x(t)|\leq \varepsilon
@@ -368,7 +368,7 @@ Deci pentru orice $t$
 |x_m(t)-x(t)|\leq \varepsilon
 \]
 
-Ultima inegalitate arată că $(x_m(t))$ converge uniform către $x(t)$ pe $[a,b]$. Deoarece $x_m(t)$ sînt continue și convergența este uniformă rezultă că și $x(t)$ este continuă
+Ultima inegalitate arată că $(x_m(t))$ converge uniform către $x(t)$ pe $[a,b]$. Deoarece $x_m(t)$ sînt continue și convergența este uniformă rezultă că și limita $x(t)$ este continuă.
 \end{proof}
 
 
