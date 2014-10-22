@@ -123,11 +123,11 @@
 % Convergenţa într-un spaţiu metric. Şiruri fundamentale.
 
 %-------------------------------------------------------------------------------
-\subsection{Convergența în metrică}
+\subsection{Convergență}
 %-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
-\subsection{Șiruri fundamentale}
+\subsection{Șiruri Cauchy (sau fundamentale)}
 %-------------------------------------------------------------------------------
 
 % Spaţii metrice complete. Exemple.
@@ -377,6 +377,18 @@ Ultima inegalitate arată că $(x_m(t))$ converge uniform către $x(t)$ pe $[a,b
 %-------------------------------------------------------------------------------
 \subsection{Completarea spațiilor metrice}
 %-------------------------------------------------------------------------------
+
+\begin{definition}
+Fie $(X,d)$ și $(\tilde{X}, \tilde{d})$ două spații metrice. Atunci:
+\begin{enumerate}
+\item O aplicație $f$ a lui $X$ în $\tilde{X}$ se numește izometrie dacă pentru orice $x,y\in X$ avem $d(x,y)=\tilde{d}(f(x),f(y))$.
+\item Spațiile $X$ și $\tilde{X}$ se numesc izometrii dacă există o izometrie bijectivă de la $X$ la $\tilde{X}$.
+\end{enumerate} 
+\end{definition}
+
+\begin{theorem}
+Pentru un spațiu metric $(X, d)$ exită un spațiu metric complet $(\hat{X}, \hat{d})$ care are un subspațiu $W$ isometric cu $X$ și dens în $\hat{X}$. Acest spațiu este unic în raport cu izometriile, adică dacă $\tilde{X}$ este un spațiu metric complet cu un subspațiu dens $\tilde{W}$ isometric cu $X$ atunci $\tilde{X}$ și $\hat{X}$ sînt isometrice.
+\end{theorem}
 
 %-------------------------------------------------------------------------------
 \subsection{Teorema Hausdorff}
