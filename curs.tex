@@ -136,9 +136,31 @@
 \subsection{Spații complete}
 %-------------------------------------------------------------------------------
 
-\begin{theorem}\label{thm:subspatiu-complet}
-Fie $X$ un spațiu metric complet și $Y$ un subspațiu al lui $X$. Atunci $Y$ este complet dacă și numai dacă $Y$ este închis în $X$.
+\begin{theorem}
+Fie $A$ o submulțime a unui spațiu metric $(X,d)$. Atunci:
+\begin{enumerate}
+\item $x\in cl A$ dacă și numai dacă există un șir $(x_n)$ din $A$ astfel încît $lim x_n = x$;
+\item $A$ este închisă dacă și numai dacă „$(x_n)\subseteq A$, $lim x_n = x$” implică $x\in A$.
+\end{enumerate}
 \end{theorem}
+
+\begin{proof}
+Fie $x\in cl A$. Dacă $x\in A$ atunci $x,x,x,...$ este șirul căutat. Dacă $x\notin A$ atunci pentru orice $n=1,2,...$ bila $B(x,\frac{1}{n})$ conține un $x_n\in A$. Rezultă că $\lim x_n = x$ deoarece $\frac{1}{n}\to 0$ atunci cînd $n\to\infty$.
+
+Dacă $x_n\in A$ și $x_n\to x$ atunci $x\in A$ sau orice vecinătate a lui $x$ conține puncte $x_n\neq x$, adică $x$ este un punct de acumulare a lui $A$. Așadar $x\in cl A$.
+
+Mulțimea $A$ este închisă dacă $A=cl A$. Rezultă din cele de mai sus.
+\end{proof}
+
+\begin{theorem}\label{thm:subspatiu-complet}
+Fie $X$ un spațiu metric complet și $A$ un subspațiu al lui $X$. Atunci $A$ este complet dacă și numai dacă $A$ este închis în $X$.
+\end{theorem}
+
+\begin{proof}
+Fie $A$ complet atunci pentru orice $x\in cl A$ există $(x_n)\subseteq A$ astfel încît $\lim x_n=x$. Dar atunci întrucîț $(x_n)$ este Cauchy, iar $A$ este complet rezultă că $(x_n)$ converge în $A$. Din unicitatea limitei rezultă $x\in A$, adică $A=cl A$.
+
+Fie $A$ închisă și $(x_n)$ un șir Cauchy. Atunci, întrucît $X$ este complet, $\lim x_n = x\in X$. Deoarece $A$ este închisă rezultă că $x\in cl A = A$. Așadar orice șir Cauchy din $A$ converge în $A$. Deci $A$ este complet.
+\end{proof}
 
 %-------------------------------------------------------------------------------
 \subsection{Spații complete remarcabile}
@@ -227,33 +249,33 @@ Rezulta că $x_m\to x$. Așadar $l^\infty$ este complet.
 \begin{proof}
 Reamintim că $c$ este spațiul șirurilor convergente de numere reale sau complexe.
 Metrica acestuia este cea indusă din $l^\infty$ deoarece $c$ este subspațiu al lui $l^\infty$.
-Vom utiliza Teorema ??? , i.e. vom arăta că $c$ este un subspațiu închis în $l^\infty$.
+Vom utiliza Teorema~\ref{thm:subspatiu-complet}, adică vom arăta că $c$ este un subspațiu închis în $l^\infty$.
 
-Fie $x=(\xi_i)\in cl c$. Atunci există $x_m=(\xi_i^{(m)})\in c$ astfel încît $x_m\to x$ cînd $m\to\infty$. Atunci pentru orice $\varepsilon$ pozitiv, există un rang $n_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ de rang mai mare decît $n_{\varepsilon}$ ($m>n_{\varepsilon}$) să avem:
-
-\[
-  d(x_m,x) = \sup_{i=1}^{\infty} |\xi_i^{(m)} - \eta_i| < \varepsilon
-\]
-
-și deoarece supremumul este luat de la elemente nenegative reiese că pentru orice $m>n_\varepsilon$ și $i=\overline{1,n}$ avem
+Fie $x=(\xi_i)\in cl(c)$. Atunci există $x_m=(\xi_i^{(m)})\in c$ astfel încît $x_m\to x$ cînd $m\to\infty$. Adică pentru orice $\varepsilon$ pozitiv, există un rang $m_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ de rang mai mare decît $m_{\varepsilon}$ ($m>m_{\varepsilon}$) să avem
 
 \[
-|\xi_i^{(m)} - \xi_i| < \varepsilon.
+  d(x_m,x) = \sup_{i=1} |\xi_i^{(m)} - \xi_i| < \varepsilon
 \]
 
-În același timp $\xi_i^{(m)}$ sînt coordonatele elementelor din $c$, adică elemente de șiruri convergente. Deci este și Cauchy. Deci pentru orice $\varepsilon_1$ pozitiv, există un rang $n_{\varepsilon_1}$ astfel încît pentru toți termenii $\xi_i^{(m)}$ și $\xi_j^{(m)}$ de rang mai mare decît $n_{\varepsilon_1}$ ($i,j>n_{\varepsilon_1}$) să avem:
+Deoarece supremul este luat de la elemente nenegative reiese că pentru orice $m>m_\varepsilon$ și $i$ fixat avem
 
 \[
-|\xi_i^{(m)}-\xi_j^{(m)}|<\varepsilon_1
+|\xi_i^{(m)} - \xi_i| < \frac{\varepsilon}{3}.
 \]
 
-Aplicăm inegalitatea triunghiului pentru orice $i,j>\varepsilon_1$:
+Pe de altă parte, $\xi_i^{(m)}$ sînt coordonate ale punctelor din $c$, adică de șiruri (de numere reale sau complexe) convergente. Rezultă că fiecare șir $\xi_1^{(m)}, \xi_2^{(m)}, ...$ este Cauchy. Deci pentru orice $\varepsilon$ pozitiv, există un rang $i_{\varepsilon}$ astfel încît pentru toți termenii $\xi_i^{(m)}$ și $\xi_j^{(m)}$ de rang mai mare decît $i_{\varepsilon_1}$ ($i,j>i_{\varepsilon}$) să avem
+
+\[
+|\xi_i^{(m)}-\xi_j^{(m)}|<\frac{\varepsilon}{3}
+\]
+
+Aplicăm inegalitatea triunghiului pentru orice $i,j>i_\varepsilon$:
 
 \[
 |\xi_i-\xi_j|<|\xi_i^{(m)}|+|\xi_i^{(m)}-\xi_j^{(m)}|+|\xi_j^{(m)}-\xi_j|<\varepsilon.
 \]
 
-Rezultă că $(\xi_i)$ este șir convergent, i.e. $x=(x_i)\in c$. Așadar $x\in cl c$.
+Rezultă că $(\xi_i)$ este șir convergent, i.e. $x=(x_i)\in c$. Așadar $x\in cl(c)$.
 \end{proof}
 
 \paragraph{Spațiul $l^p$} Spatiul $l^p$ este complet, $1\leq p<\infty$.
