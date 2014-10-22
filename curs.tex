@@ -182,41 +182,37 @@ Completitudinea spațiului $\mathbb{C}^n$ se demonstrează analog.
 
 \begin{proof}[Într-adevăr]
 
-Fie $(x_m)$ un șir Cauchy în $l^\infty$, unde $x_m=(\xi_1^{(m)},\xi_2^{(m)},...)$. Întrucîț metrica pe $l^\infty$ este definită prin
+Fie $(x_m)$ un șir Cauchy în $l^\infty$, unde $x_m=(\xi_1^{(m)},\xi_2^{(m)},...)$. Întrucît metrica pe $l^\infty$ este definită prin
 
-\[
-  d(x,y) = \sup_{i=1}^{\infty} |\xi_i - \eta_i|
-\]
+\[ d(x,y) = \sup_{i=1}^{\infty} |\xi_i - \eta_i| \]
 
-unde $x=(\xi_i)$ și $y=(\eta_i)$.  și $(x_m)$ este Cauchy, pentru orice $\varepsilon$ pozitiv, există un rang $n_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ și $x_p$ de rang mai mare decît $n_{\varepsilon}$ ($m,p>n_{\varepsilon}$) să avem:
+\noindent unde $x=(\xi_i)$ și $y=(\eta_i)$, iar $(x_m)$ este Cauchy, pentru orice $\varepsilon$ pozitiv, există un rang $n_{\varepsilon}$ astfel încît pentru toți termenii $x_m$ și $x_n$ de rang mai mare decît $m_{\varepsilon}$ ($m,n>m_{\varepsilon}$) să avem
 
-\[
-d(x_m,x_p) = \sup_{i=1}^{\infty} |\xi_i^{(m)} - \xi_i^{(p)}| < \varepsilon.
-\]
+\[ d(x_m,x_n) = \sup_{i=1}^{\infty} |\xi_i^{(m)} - \xi_i^{(n)}| < \varepsilon. \]
 
-și deoarece supremumul este luat de la elemente nenegative reiese că pentru orice $m,p>n_\varepsilon$ și $i=\overline{1,n}$ avem
+Deoarece supremul este luat de la elemente nenegative reiese că pentru orice $m,n>m_\varepsilon$ și $i$ fixat avem
 
 \[
 \label{l2}
-|\xi_i^{(m)} - \xi_i^{(p)}| < \varepsilon.
+|\xi_i^{(m)} - \xi_i^{(n)}| < \varepsilon.
 \]
 
-Din ultima relație reies că pentru fiecare $i=\overline{1,n}$ șirul de coordonate (care-s numere reale) $\xi_i^{(1)}, \xi_i^{(2)}, ..., \xi_i^{(m)}, ...$ este un șir Cauchy de numere reale. Acest șir converge conform criteriului Cauchy de convergență a șirurilor numerice: $\xi_i^{(m)}\to \xi_i$ cînd $m\to\infty$. Folosind aceste limite infinite definim $x=(\xi_1,\xi_2,...)$. Evident, $x\in\mathbb{R}^n$. Vom arăta că $x\in l^\infty$ și $x_m\to x$.
+Din ultima relație reies că pentru fiecare $i$ șirul de numere reale (complexe) $\xi_i^{(1)}, \xi_i^{(2)}, ..., \xi_i^{(m)}, ...$ este un șir Cauchy. Acest șir converge conform criteriului Cauchy de convergență a șirurilor numerice: $\xi_i^{(m)}\to \xi_i$ cînd $m\to\infty$. Folosind aceste limite infinite definim $x=(\xi_1,\xi_2,...)$. Vom arăta că $x\in l^\infty$ și $x_m\to x$.
 
-Din \ref{l2} cînd $p\to\infty$ avem
+Trecînd la limită în \eqref{l2} cu $n\to\infty$ avem
 
 \[
 \label{l2star}
 |\xi_i^{(m)} - \xi_i| \leq \varepsilon.
 \]
 
-Deoarece $x_m=(\xi_i^{(m)})\in l^\infty$ el este mărginit, i.e. există un număr real $k_m$ încît pentru orice $i$ avem $|\xi_i^{(m)}|\leq k_m$. Din inegalitatea triunghiului pentru orice $m>n_\varepsilon$:
+Întrucîț $x_m=(\xi_i^{(m)})\in l^\infty$ reiese că $(x_m)$ este mărginit, i.e. există un număr real $k_m$ încît pentru orice $i$ avem $|\xi_i^{(m)}|\leq k_m$. Astfel aplicînd inegalitatea triunghiului obținem ($m>m_\varepsilon$)
 
 \[
 |\xi_i|=|\xi_i-\xi_i^{(m)}+\xi_i^{(m)}|\leq |\xi_i-\xi_i^{(m)}|+|\xi_i^{(m)}|\leq\varepsilon+k_m
 \]
 
-Inegalitatea de mai sus este adevărată pentru orice $i$ și din cauza că în membrul drept $i$ nu este prezent rezutlă că șirul $(\xi_i)$ este marginit, i.e. $x\in l^\infty$. De asemenea din \ref{l2star} pentru $m>n_\varepsilon$
+Inegalitatea de mai sus este adevărată pentru orice $i$ și din cauza că în membrul drept $i$ nu este prezent rezultă că șirul $(\xi_i)$ este mărginit, i.e. $x\in l^\infty$. De asemenea din \eqref{l2star} pentru $m>m_\varepsilon$ obținem
 
 \[
 d(x_m,x)=\sup_i |\xi_i^{(m)}-\xi_i|\leq \varepsilon.
