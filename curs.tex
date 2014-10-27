@@ -6,6 +6,8 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+	\usetikzlibrary{matrix,positioning}
 %===============================================================================
 \usepackage{ntheorem}
   \theoremstyle{change}
@@ -197,6 +199,52 @@ Din ultima relație rezultă că pentru fiecare $i=\overline{1,n}$,  șirul de n
 Așadar $x$ este limita șirului $(x_m)$ și întrucît acest șir a fost ales arbitrar spațiul $\mathbb{R}^n$ este complet.
 
 Completitudinea spațiului $\mathbb{C}^n$ se demonstrează analog.
+
+\begin{tikzpicture}
+	[
+		every matrix/.style={matrix of math nodes, left delimiter = ( ,right delimiter = )}
+	]
+	\matrix(mx1) at (0,0)
+	{
+		\xi_1^{(1)} \\
+		\xi_2^{(1)} \\
+		\vdots\\
+		\xi_n^{(1)} \\
+	};
+	\matrix(mx2) [right = of mx1]
+	{
+		\xi_1^{(2)} \\
+		\xi_2^{(2)} \\
+		...\\
+		\xi_n^{(2)} \\
+	};
+	\node(mxdots) [right = of mx2] {$\cdots$};
+	\matrix(mxm) [right = of mx2]
+	{
+		\xi_1^{(m)} \\
+		\xi_2^{(m)} \\
+		...\\
+		\xi_n^{(m)} \\
+	};
+	\matrix(mx) [right = of mxm]
+	{
+		\xi_1 \\
+		\xi_2 \\
+		...\\
+		\xi_n \\
+	};
+
+%	\node(x1) [above = of mx1] {$x_1$};
+%	\node(x2) [above = of mx2] {$x_2$};
+%	\node(xdots) [above = of mxdots] {$\cdots$};
+%	\node(xm) [above = of mxm] {$x_m$};
+%	\node(x) [above = of mx] {$x$};	
+	\foreach \x in {1,2,dots,m,{}}
+		\node(x\x) [above = of mx\x]{www};
+	
+	\draw[->] (xm) -- (x);
+	\foreach \x in {1,2,4} {\draw[->] (mxm-\x-1) -- (mx-\x-1);};
+\end{tikzpicture}
 
 \end{proof}
 
