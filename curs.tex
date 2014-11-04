@@ -17,6 +17,7 @@
   \newtheorem{example}[theorem]{Exemplu}
   \newtheorem{proposition}[theorem]{Propoziție}
   \newtheorem{corollary}[theorem]{Corolar}
+  \newtheorem{remark}[theorem]{Remarcă}
 %  \newenvironment{proof}{{\bf Demonstrație:} }{}
   %\newtheorem{exercise}[theorem]{Exercițiu}
 \newenvironment{proof}[1][Proof]{\begin{trivlist}
@@ -427,16 +428,35 @@ Ultima inegalitate arată că $(x_m(t))$ converge uniform către $x(t)$ pe $[a,b
 %-------------------------------------------------------------------------------
 
 \begin{definition}
-Fie $(X,d)$ și $(\tilde{X}, \tilde{d})$ două spații metrice. Atunci:
-\begin{enumerate}
-\item O aplicație $f$ a lui $X$ în $\tilde{X}$ se numește izometrie dacă pentru orice $x,y\in X$ avem $d(x,y)=\tilde{d}(f(x),f(y))$.
-\item Spațiile $X$ și $\tilde{X}$ se numesc izometrii dacă există o izometrie bijectivă de la $X$ la $\tilde{X}$.
-\end{enumerate} 
+Două spații metrice $(X,d)$ și $(\tilde{X}, \tilde{d})$ se numesc \emph{izomorfe} dacă există o aplicație bijectivă $h:X\longrightarrow \hat{X}$, numită \emph{izomorfism}, astfel încît pentru orice $x$ și $y$ din $X$ să avem 
+\[
+	d(x,y)=\tilde{d}(h(x),h(y)).
+\]
 \end{definition}
 
 \begin{theorem}
-Pentru un spațiu metric $(X, d)$ exită un spațiu metric complet $(\hat{X}, \hat{d})$ care are un subspațiu $W$ isometric cu $X$ și dens în $\hat{X}$. Acest spațiu este unic în raport cu izometriile, adică dacă $\tilde{X}$ este un spațiu metric complet cu un subspațiu dens $\tilde{W}$ isometric cu $X$ atunci $\tilde{X}$ și $\hat{X}$ sînt isometrice.
+Pentru orice spațiu metric $(X, d)$ există un spațiu metric complet $(\hat{X}, \hat{d})$ și o izometrie $h$ între $X$ și $\hat{X}$ astfel încît $h(X)$ este un subspațiu dens în $\hat{X}$. 
+
+Spațiul $(\hat{X},\hat{d})$ este unic pînă la o izometrie de spații metrice, adică dacă $\tilde{X}$ este un spațiu metric complet cu un subspațiu dens $\tilde{W}$ isometric cu $X$ atunci $\tilde{X}$ și $\hat{X}$ sînt izometrice.
 \end{theorem}
+
+\begin{proof}
+Vom prezenta numai o schiță de demonstrație.
+
+Pentru orice două șiruri Cauchy $(x_n)$ și $(x_n')$ din $X$ definim relația de echivalență $\sim$: $(x_n)\sim(x_n')$ dacă și numai dacă $lim_{n\to\infty}d(x_n,x_n')=0$.
+
+Fie $\hat{X}$ mulțimea claselor de echivalență $\hat{x}$, $\hat{y}$ în raport cu acestă relație. Fie 
+\[
+	\hat{d}(\hat{x},\hat{y})=\lim_{n\to\infty}(x_n,y_n)
+\]
+unde $(x_n)\in\hat{x}$ și $(y_n)\in\hat{y}$.
+
+Construim izometria $h$ astfel pentru orice $x\in X$ îi asociem $\hat{x}$ astfel încît șirul constant $(x,x,x,x,...)\in \hat{x}$
+\end{proof}
+
+\begin{remark}
+Spațiul $(\hat{X},\hat{d})$ construit în teorema precedentă se numește \emph{completatul} spațiului $(X,d)$.
+\end{remark}
 
 %-------------------------------------------------------------------------------
 \subsection{Teorema Hausdorff}
